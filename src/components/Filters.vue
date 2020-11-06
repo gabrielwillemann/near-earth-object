@@ -48,7 +48,6 @@ export default {
         this.validateFiltersDate();
         await this.loadNearEarthObjects();
       } catch (error) {
-        console.log(error);
         this.setMessageShow(true);
         this.setMessageText(error.error_message || error);
       } finally {

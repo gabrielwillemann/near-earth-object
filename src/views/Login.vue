@@ -27,9 +27,5 @@ export default {
       }
     },
   },
-  async mounted() {
-    let auth = await this.$firebase.auth();
-    console.log('Login', JSON.stringify(auth));
-  },
 };
 </script>

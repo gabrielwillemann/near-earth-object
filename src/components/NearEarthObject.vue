@@ -56,7 +56,7 @@ export default {
       const db = this.$firebase.firestore();
       const collection = db.collection('favorites_objects');
       const doc = collection.doc();
-      await doc.set(this.object);
+      await doc.set({ ...this.object, user: this.getUser() });
       await this.loadFavoriteObject();
       this.$emit('favorite-added');
     },
@@ -75,6 +75,9 @@ export default {
       } else {
         this.favoriteObject = null;
       }
+    },
+    getUser() {
+      return this.$firebase.auth().currentUser.uid;
     },
   },
   mounted() {
