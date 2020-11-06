@@ -1,20 +1,17 @@
 <template>
   <v-app>
-    <v-app-bar app color="primary" dark>
-      <v-spacer />
-      <span>Near Earth Object</span>
-      <v-spacer />
-    </v-app-bar>
-    <v-main>
-      <v-container fluid>
-        <router-view />
-      </v-container>
-    </v-main>
+    <router-view />
+    <Overlay />
+    <Snackbar />
   </v-app>
 </template>
 
 <script>
+import Overlay from '@/components/Overlay.vue';
+import Snackbar from '@/components/Snackbar.vue';
+
 export default {
   name: 'App',
+  components: { Overlay, Snackbar },
 };
 </script>
